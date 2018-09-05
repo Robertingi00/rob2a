@@ -17,3 +17,12 @@ Við byrjuðum að setja robotinn samann í öðrum tímanum. Það gekk mis vel
 <img align="right" width="250" src="https://github.com/Robertingi00/rob2a/blob/master/verkefni1/myndir/middel.jpg">
 
 Svo koma að því að tengja hann, okkar markmið var að hafa ein fára snúrur sjáanlegar. Og það var aftur farið á teikniborðið. Humyndi okkar var að taka flatan kubb og festa batteríið á hann og koma svo honum hundir robotinn en í sama tíma fela allar snúrur fyrri bakvið kubbinn. Við vorum frekar lengi að tengja hann en ástæað var að við vildum láta hann líta vel út. Allar snúrur áttu að hafa sinn stað.
+
+
+  ___
+### Tengingar
+| Sensored/Motors | Analog | Digital | Motor | UART |
+| ----------------|:------:|:*------:-
+| col 3 is        | right-aligned | $1600 |
+| col 2 is        | centered      |   $12 |||
+ zebra stripes   | are neat      |    $1 |
