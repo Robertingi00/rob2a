@@ -19,10 +19,24 @@ Við byrjuðum að setja robotinn samann í öðrum tímanum. Það gekk mis vel
 Svo koma að því að tengja hann, okkar markmið var að hafa ein fára snúrur sjáanlegar. Og það var aftur farið á teikniborðið. Humyndi okkar var að taka flatan kubb og festa batteríið á hann og koma svo honum hundir robotinn en í sama tíma fela allar snúrur fyrri bakvið kubbinn. Við vorum frekar lengi að tengja hann en ástæað var að við vildum láta hann líta vel út. Allar snúrur áttu að hafa sinn stað.
 
 
-  ___
+  
 ### Tengingar
-| Sensored/Motors | Analog | Digital | Motor | UART |
-| ----------------|:------:|:*------:-
-| col 3 is        | right-aligned | $1600 |
-| col 2 is        | centered      |   $12 |||
- zebra stripes   | are neat      |    $1 |
+
+
+   |       Sensored/Motors       | Analog | Digital | Motor |  UART  |
+   |-----------------------------|:------:|:-------:|:-----:|-------:|
+   | Shaft Encoder B Top Wire    |        | Port 1  |       |        |
+   | Shaft Encoder B Bottom Wire |        | Port 2  |       |        |
+   | Shaft Encoder A Top Wire    |        | Port 3  |       |        |
+   | Shaft Encoder A Bottom Wire |        | Port 4  |       |        |
+   | Led Screen                  |        |         |       | Port 1 |
+   | Light Sensor                | Port 2 |         |       |        |
+   | Potentiometers              | Port 5 |         |       |        |
+   | Line Follower               | Port 3 |         |       |        |
+   | Button                      | Port 12|         |       |        |
+   | Rangesensor Input           |        | Port 8  |       |        |
+   | Rangesensor Output          |        | Port 9  |       |        |
+   | Right Motor                 |        |         | Port 2|        |
+   | Left Motor                  |        |         | Port 3|        |
+   | Claw up and down            |        |         | Port 4|        |
+   | Claw Itself                 |        |         | Port 5|        |
