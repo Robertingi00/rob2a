@@ -25,7 +25,9 @@ Svo koma að því að tengja hann, okkar markmið var að hafa eins fáar snúr
    | Led Screen                  |        |         |       | Port 1 |
    | Light Sensor                | Port 2 |         |       |        |
    | Potentiometers              | Port 5 |         |       |        |
-   | Line Follower               | Port 3 |         |       |        |
+   | Line Follower Right         | Port 7 |         |       |        |
+   | Line Follower Middle        | Port 3 |         |       |        |
+   | Line Follower Left          | Port 8 |         |       |        |
    | Button                      | Port 12|         |       |        |
    | Rangesensor Input           |        | Port 8  |       |        |
    | Rangesensor Output          |        | Port 9  |       |        |
