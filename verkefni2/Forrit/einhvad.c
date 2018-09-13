@@ -1,6 +1,10 @@
 
 LCD({'dfsd','sdfd'})
 
+int const FullPower = 127;
+int const MediumPower = 63.5;
+int const WheelCircum = 32.673 //ummá á dekki 
+    
 void LCD(text)
 {
     clearLCDLine(0);
@@ -29,5 +33,35 @@ void TurnLeft()
 {
     ResetEncoders();
     //vanat meria
+    
+}
+
+void CmToDegree(cm)
+{
+    int degree = (((cm * 100) / 32.673) * 360) / 100;
+    return degree;
+}
+
+void MoveForward(meters) 
+{
+    ResetEncoders();
+    int deg = CmToDegree(Cmeters);
+    while(abs(SensorValue[leftEncoder]) < (deg))
+    {
+        motor[rightMotor] = FullPower;
+        motor[leftMotor] = FullPower;
+    }
+    
+}
+
+void MoveBackward()
+{
+    ResetEncoders();
+    int deg = CmToDegree(Cmeters);
+    while(abs(SensorValue[leftEncoder]) < (deg))
+    {
+        motor[rightMotor] = -(FullPower);
+        motor[leftMotor] = -(FullPower);
+    }
     
 }
