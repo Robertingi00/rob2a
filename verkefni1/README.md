@@ -16,7 +16,7 @@ Svo koma að því að tengja hann, okkar markmið var að hafa eins fáar snúr
 ### Tengingja tafla
 
 
-   |       Sensored/Motors       | Analog | Digital | Motor |  UART  |
+   |       Sensored/Motors       | Analog | Digital | Motor |  UART  |      
    |-----------------------------|:------:|:-------:|:-----:|-------:|
    | Shaft Encoder B Top Wire    |        | Port 1  |       |        |
    | Shaft Encoder B Bottom Wire |        | Port 2  |       |        |
@@ -31,7 +31,8 @@ Svo koma að því að tengja hann, okkar markmið var að hafa eins fáar snúr
    | Button                      | Port 12| Port 12 |       |        |
    | Rangesensor Input           |        | Port 8  |       |        |
    | Rangesensor Output          |        | Port 9  |       |        |
-   | Right Motor                 |        |         | Port 2|        |
-   | Left Motor                  |        |         | Port 3|        |
+   | Right Motor                 |        |         | Port 1|        |
+   | Left Motor                  |        |         | Port10|        |
+   | Motor Encoder               |        |         |       |        |
    | Claw up and down            |        |         | Port 4|        |
    | Claw Itself                 |        |         | Port 5|        |
