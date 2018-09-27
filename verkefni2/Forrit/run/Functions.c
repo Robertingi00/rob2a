@@ -1,4 +1,4 @@
-int const FullPower = 127;
+int const FullPower = 80;
 int const MediumPower = 63.5;
 int const WheelCircum = 32.673; //ummá á dekki
 #define M_PI 3.14159265358979323846
@@ -76,6 +76,10 @@ void DriveStraight(bool att)
             motor[leftMotor] = -(FullPower);
         }
     }
+    writeDebugStream("This is MotorEncoder left %d \n", abs(nMotorEncoder[leftMotor]));
+    writeDebugStream("This is MotorEncoder right %d \n", abs(nMotorEncoder[rightMotor]));
+    writeDebugStream("This is encoder left %d \n", abs(SensorValue[leftEncoder]));
+    writeDebugStream("This is encoder right %d \n", abs(SensorValue[rightEncoder]));
 }
 
 void MoveForward(int cm)
