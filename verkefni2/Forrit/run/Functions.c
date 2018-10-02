@@ -1,6 +1,6 @@
 int const FullPower = 80;
 int const MediumPower = 63.5;
-int const WheelCircum = 32.673; //ummá á dekki
+float const WheelCircum = 32.673;
 #define M_PI 3.14159265358979323846
 int CmToDegree(int cm);
 
@@ -22,9 +22,15 @@ void ResetEncoders()
   	SensorValue[leftEncoder] = 0;
 }
 
+void ResetMoror()
+{
+    motor[rightMotor] = 0;
+  	motor[leftMotor] = 0;
+}
+
 void TurnRight(int deg)
 {
-    while(abs(SensorValue[leftEncoder]) < (deg) && abs(SensorValue[leftEncoder]) < (deg)
+    while(abs(SensorValue[leftEncoder]) < deg && abs(SensorValue[leftEncoder]) < deg)
     {
         motor[rightMotor] = FullPower;
         motor[leftMotor] = -(FullPower);
@@ -43,14 +49,13 @@ void TurnLeft(int deg)
     }
 }
 
-double CmToDegree(int cm)
-{
-    double degree = (cm / 33) * 360;
-    return degree;
+float test(float cm){
+  float tala = (cm / 33.0) * 360.0;
+  return tala;
 }
 void DriveStraight(bool att)
 {
-    if (SensorValue[rightEncoder] > (abs(SensorValue[leftEncoder]))){
+    if (abs(SensorValue[rightEncoder]) + 100 > abs(SensorValue[leftEncoder])){
         if (att){
             motor[rightMotor] = (FullPower-20);
             motor[leftMotor] = FullPower;
@@ -58,7 +63,7 @@ void DriveStraight(bool att)
             motor[rightMotor] = -(FullPower-20);
             motor[leftMotor] = -(FullPower);
         }
-    }else if(SensorValue[rightEncoder] < (abs(SensorValue[leftEncoder]))){
+    }else if(abs(SensorValue[leftEncoder]) + 100 > abs(SensorValue[rightEncoder])){
         if (att){
             motor[rightMotor] = FullPower;
             motor[leftMotor] = (FullPower-20);
@@ -67,7 +72,8 @@ void DriveStraight(bool att)
             motor[rightMotor] = -(FullPower);
             motor[leftMotor] = -(FullPower-20);
         }
-    }else if(SensorValue[rightEncoder] == (abs(SensorValue[leftEncoder]))){
+        writeDebugStream("left motor er hradari \n",);
+    }else{
         if (att){
             motor[rightMotor] = FullPower;
             motor[leftMotor] = FullPower;
@@ -76,34 +82,31 @@ void DriveStraight(bool att)
             motor[leftMotor] = -(FullPower);
         }
     }
-    writeDebugStream("This is MotorEncoder left %d \n", abs(nMotorEncoder[leftMotor]));
-    writeDebugStream("This is MotorEncoder right %d \n", abs(nMotorEncoder[rightMotor]));
-    writeDebugStream("This is encoder left %d \n", abs(SensorValue[leftEncoder]));
-    writeDebugStream("This is encoder right %d \n", abs(SensorValue[rightEncoder]));
+   writeDebugStream("left - encoder %d \n", abs(SensorValue[leftEncoder]));
+   writeDebugStream("right - encoder %d \n", abs(SensorValue[rightEncoder]));
 }
 
-void MoveForward(int cm)
+
+void MoveForward(float cm)
 {
-    ResetEncoders();
-    double deg = CmToDegree(cm);
-    while(abs(SensorValue[rightEncoder]) < (deg))
-    {
-        DriveStraight(true);
-    }
-    motor[rightMotor] = 0;
-    motor[leftMotor] = 0;
+	ResetEncoders();
+	float degree = test(cm);
+	writeDebugStream("deggree %d \n", degree);
+
+	while(abs(SensorValue[rightEncoder]) < degree){
+		DriveStraight(true);
+	}
+	ResetMoror();
 }
 
 void MoveBackward(int cm)
 {
-    ResetEncoders();
-    double deg = CmToDegree(cm);
-    while(abs(SensorValue[rightEncoder]) < (deg))
-    {
-        DriveStraight(false);//false seigir forritinu ad hann se ad fara aftur a bak
-    }
-    motor[rightMotor] = 0;
-    motor[leftMotor] = 0;
+	ResetEncoders();
+	float degree = test(cm);
+	while(abs(SensorValue[rightEncoder]) < degree){
+			DriveStraight(false);
+	}
+	ResetMoror();
 }
 
 task stop()
