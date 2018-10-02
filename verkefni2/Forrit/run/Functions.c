@@ -1,28 +1,24 @@
-int const FullPower = 80;
-int const MediumPower = 63.5;
-float const WheelCircum = 32.673;
-#define M_PI 3.14159265358979323846
-int CmToDegree(int cm);
+int const FullPower = 63;
 
 void LCD(string text_1, string text_2)
 {
-
-    clearLCDLine(0);
+  clearLCDLine(0);
 	clearLCDLine(1);
 	bLCDBacklight = true;
 	displayLCDPos(0,0);
 	displayNextLCDString(text_1);
 	displayLCDPos(1,0);
 	displayNextLCDString(text_2);
-
 }
 void ResetEncoders()
 {
-    SensorValue[rightEncoder] = 0;
-  	SensorValue[leftEncoder] = 0;
+		nMotorEncoder[rightMotor] = 0;
+		nMotorEncoder[leftMotor] = 0;
+		SensorValue[leftEncoder] = 0;
+		SensorValue[rightEncoder] = 0;
 }
 
-void ResetMoror()
+void ResetMotor()
 {
     motor[rightMotor] = 0;
   	motor[leftMotor] = 0;
@@ -30,6 +26,7 @@ void ResetMoror()
 
 void TurnRight(int deg)
 {
+		ResetEncoders()
     while(abs(SensorValue[leftEncoder]) < deg && abs(SensorValue[leftEncoder]) < deg)
     {
         motor[rightMotor] = FullPower;
@@ -39,14 +36,17 @@ void TurnRight(int deg)
     return;
 }
 
-void TurnLeft(int deg)
+void TurnLeft(float deg)
 {
     ResetEncoders();
-    while(abs(SensorValue[leftEncoder]) < (deg) && abs(SensorValue[leftEncoder]) < (deg)
+    float test_tala = 35.0 / 10.6;
+   	float test_degree = (test_tala * deg);
+    while(abs(SensorValue[leftEncoder]) < (test_degree) && abs(SensorValue[rightEncoder]) < (test_degree))
     {
-        motor[rightMotor] = -(FullPower);
-        motor[leftMotor] = FullPower;
+        motor[rightMotor] = -(80);
+        motor[leftMotor] = 80;
     }
+    ResetMotor();
 }
 
 float test(float cm){
@@ -55,24 +55,36 @@ float test(float cm){
 }
 void DriveStraight(bool att)
 {
-    if (abs(SensorValue[rightEncoder]) + 100 > abs(SensorValue[leftEncoder])){
+    if (abs(SensorValue[rightEncoder]) + 20 < abs(SensorValue[leftEncoder])){
         if (att){
-            motor[rightMotor] = (FullPower-20);
-            motor[leftMotor] = FullPower;
+            motor[rightMotor] = FullPower+10;
+            motor[leftMotor] = (FullPower-10);
         }else{
-            motor[rightMotor] = -(FullPower-20);
-            motor[leftMotor] = -(FullPower);
+            motor[rightMotor] = -(FullPower+20);
+            motor[leftMotor] = -(FullPower-20);
+            writeDebugStream("-------------------Back-------------\n");
+
         }
-    }else if(abs(SensorValue[leftEncoder]) + 100 > abs(SensorValue[rightEncoder])){
-        if (att){
-            motor[rightMotor] = FullPower;
-            motor[leftMotor] = (FullPower-20);
+        writeDebugStream("--------------------------------------------------\n");
+        writeDebugStream("right motor er hradari \n",);
+        writeDebugStream("left - encoder %d \n", abs(SensorValue[leftEncoder]));
+   			writeDebugStream("right - encoder %d \n", abs(SensorValue[rightEncoder]));
+   			writeDebugStream("--------------------------------------------------\n");
+    }else if(abs(SensorValue[leftEncoder]) + 20 < abs(SensorValue[rightEncoder])){
+      if (att){
+            motor[rightMotor] =(FullPower-10);
+            motor[leftMotor] = (FullPower+10);
         }else{
 
-            motor[rightMotor] = -(FullPower);
-            motor[leftMotor] = -(FullPower-20);
+            motor[rightMotor] = -(FullPower-20);
+            motor[leftMotor] = -(FullPower+20);
+            writeDebugStream("-------------------Back-------------\n");
         }
+        writeDebugStream("--------------------------------------------------\n");
         writeDebugStream("left motor er hradari \n",);
+        writeDebugStream("left - encoder %d \n", abs(SensorValue[leftEncoder]));
+   			writeDebugStream("right - encoder %d \n", abs(SensorValue[rightEncoder]));
+   			writeDebugStream("--------------------------------------------------\n");
     }else{
         if (att){
             motor[rightMotor] = FullPower;
@@ -80,7 +92,13 @@ void DriveStraight(bool att)
         }else{
             motor[rightMotor] = -(FullPower);
             motor[leftMotor] = -(FullPower);
+            writeDebugStream("-------------------Back-------------\n");
         }
+       	writeDebugStream("--------------------------------------------------\n");
+        writeDebugStream("their eru svipadir motor er hradari \n",);
+        writeDebugStream("left - encoder %d \n", abs(SensorValue[leftEncoder]));
+   			writeDebugStream("right - encoder %d \n", abs(SensorValue[rightEncoder]));
+   			writeDebugStream("--------------------------------------------------\n");
     }
    writeDebugStream("left - encoder %d \n", abs(SensorValue[leftEncoder]));
    writeDebugStream("right - encoder %d \n", abs(SensorValue[rightEncoder]));
@@ -96,17 +114,17 @@ void MoveForward(float cm)
 	while(abs(SensorValue[rightEncoder]) < degree){
 		DriveStraight(true);
 	}
-	ResetMoror();
+	ResetMotor();
 }
 
-void MoveBackward(int cm)
+void MoveBackward(float cm)
 {
 	ResetEncoders();
 	float degree = test(cm);
 	while(abs(SensorValue[rightEncoder]) < degree){
 			DriveStraight(false);
 	}
-	ResetMoror();
+	ResetMotor();
 }
 
 task stop()
