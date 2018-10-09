@@ -63,14 +63,9 @@ void DriveStraight(bool att)
         }else{
             motor[rightMotor] = -(FullPower+20);
             motor[leftMotor] = -(FullPower-20);
-            writeDebugStream("-------------------Back-------------\n");
 
         }
-        writeDebugStream("--------------------------------------------------\n");
-        writeDebugStream("right motor er hradari \n",);
-        writeDebugStream("left - encoder %d \n", abs(SensorValue[leftEncoder]));
-   			writeDebugStream("right - encoder %d \n", abs(SensorValue[rightEncoder]));
-   			writeDebugStream("--------------------------------------------------\n");
+
     }else if(abs(SensorValue[leftEncoder]) + 20 < abs(SensorValue[rightEncoder])){
       if (att){
             motor[rightMotor] =(FullPower-10);
@@ -79,13 +74,8 @@ void DriveStraight(bool att)
 
             motor[rightMotor] = -(FullPower-20);
             motor[leftMotor] = -(FullPower+20);
-            writeDebugStream("-------------------Back-------------\n");
         }
-        writeDebugStream("--------------------------------------------------\n");
-        writeDebugStream("left motor er hradari \n",);
-        writeDebugStream("left - encoder %d \n", abs(SensorValue[leftEncoder]));
-   			writeDebugStream("right - encoder %d \n", abs(SensorValue[rightEncoder]));
-   			writeDebugStream("--------------------------------------------------\n");
+
     }else{
         if (att){
             motor[rightMotor] = FullPower;
@@ -93,16 +83,10 @@ void DriveStraight(bool att)
         }else{
             motor[rightMotor] = -(FullPower);
             motor[leftMotor] = -(FullPower);
-            writeDebugStream("-------------------Back-------------\n");
         }
-       	writeDebugStream("--------------------------------------------------\n");
-        writeDebugStream("their eru svipadir motor er hradari \n",);
-        writeDebugStream("left - encoder %d \n", abs(SensorValue[leftEncoder]));
-   			writeDebugStream("right - encoder %d \n", abs(SensorValue[rightEncoder]));
-   			writeDebugStream("--------------------------------------------------\n");
+
     }
-   writeDebugStream("left - encoder %d \n", abs(SensorValue[leftEncoder]));
-   writeDebugStream("right - encoder %d \n", abs(SensorValue[rightEncoder]));
+
 }
 
 
