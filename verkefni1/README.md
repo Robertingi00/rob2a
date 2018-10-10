@@ -26,9 +26,9 @@ Svo koma að því að tengja hann, okkar markmið var að hafa eins fáar snúr
    | Light Sensor                | Port 2 |         |       |        |
    | Potentiometers              | Port 5 |         |       |        |
    | Line Follower Right         | Port 7 |         |       |        |
-   | Line Follower Middle        | Port 3 |         |       |        |
+   | Line Follower Middle        | Port 1 |         |       |        |
    | Line Follower Left          | Port 8 |         |       |        |
-   | Button                      | Port 12| Port 12 |       |        |
+   | Button                      |        | Port 12 |       |        |
    | Rangesensor Input           |        | Port 8  |       |        |
    | Rangesensor Output          |        | Port 9  |       |        |
    | Right Motor                 |        |         | Port 1|        |
