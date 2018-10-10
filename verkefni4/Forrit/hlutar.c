@@ -39,6 +39,52 @@
 
 //+++++++++++++++++++++++++++++++++++++++++++++| MAIN |+++++++++++++++++++++++++++++++++++++++++++++++
 
+task DriveStraight()
+{
+	while(true){
+	    if (abs(SensorValue[rightEncoder]) + 20 < abs(SensorValue[leftEncoder])){
+	        if (att){
+	            motor[rightMotor] = FullPower+10;
+	            motor[leftMotor] = (FullPower-10);
+	        }
+
+	    }else if(abs(SensorValue[leftEncoder]) + 20 < abs(SensorValue[rightEncoder])){
+	      if (att){
+	            motor[rightMotor] =(FullPower-10);
+	            motor[leftMotor] = (FullPower+10);
+	        }
+
+	    }else{
+	        if (att){
+	            motor[rightMotor] = FullPower;
+	            motor[leftMotor] = FullPower;
+	        	}
+
+	    }
+
+	}
+}
+
+void printRandoms(int lower, int upper) 
+{ 
+	int i; 
+	for (i = 0; i < 1; i++) { 
+		int num = (rand() % 
+		(upper - lower + 1)) + lower; 
+		return num
+	} 
+} 
+
+
+
+
+
+
+void MoveForward(bool att)
+{
+	StartTask(DriveStraight);
+}
+
 task main()
 {
 	StartTask(stop);
@@ -47,17 +93,26 @@ task main()
 	{
 		if(SensorValue[sonar] > 40)
 		{
-				motor[rightMotor] = 63;
-				motor[leftMotor] = 63;
+			MoveForward(true);
 		}else{
+			StopTask(DriveStraight);
+			ResetMotor();
+			int random_number =  printRandoms(0, 1); 
+			if (random_number == 1){	
 				TurnRight(90.0);
+			}else{
+				TurnLeft(90.0);
+			}
 
 
 		}
 		while(SensorValue[lightSensor] > 200) // While the ambient lightSensor reads a value less than 200
 		{
-			motor[leftMotor] = 0;
-			motor[rightMotor] = 0;
+			StopTask(DriveStraight);
+			ResetMotor();
 		}
 	}
 }
+
+
+

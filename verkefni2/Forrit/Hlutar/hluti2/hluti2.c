@@ -36,9 +36,9 @@ task main()
 {
 	StartTask(stop);
 	for (int i = 1;i <= 5; i++){
-			MoveForward(50*i);
+			MoveForward_cm(50*i);
 			wait1Msec(2000);
-			MoveBackward(50*i);
+			MoveBackward_cm(50*i);
 			wait1Msec(2000);
 	}
 }

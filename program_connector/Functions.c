@@ -90,7 +90,7 @@ void DriveStraight(bool att)
 }
 
 
-void MoveForward(float cm)
+void MoveForward_cm(float cm)
 {
 	ResetEncoders();
 	float degree = test(cm);
@@ -102,7 +102,7 @@ void MoveForward(float cm)
 	ResetMotor();
 }
 
-void MoveBackward(float cm)
+void MoveBackward_cm(float cm)
 {
 	ResetEncoders();
 	float degree = test(cm);
