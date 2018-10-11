@@ -85,7 +85,7 @@ void MoveForward(bool att)
 	}
 }
 
-task main()
+void verkefni_4()
 {
 	StartTask(stop);
 
@@ -100,9 +100,9 @@ task main()
 			ResetMotor();
 			int random_number =  printRandoms(0, 1);
 			if (random_number == 1){
-				TurnRight(90.0);
+				TurnRight90();
 			}else{
-				TurnLeft(90.0);
+				TurnLeft90();
 			}
 
 

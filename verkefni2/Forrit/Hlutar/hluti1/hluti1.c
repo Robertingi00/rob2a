@@ -31,7 +31,7 @@
 
 int const timi = 1.388888889; //lengdi til ad fara halfan meter
 //+++++++++++++++++++++++++++++++++++++++++++++| MAIN |+++++++++++++++++++++++++++++++++++++++++++++++
-task main()
+void hluti_1()
 {
 	for (int i = 1; i <= 5;i++){
 		motor[rightMotor] = 127;

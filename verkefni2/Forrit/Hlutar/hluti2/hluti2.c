@@ -30,11 +30,12 @@
 // 50 = 151,5%
 // 360 * 1,515 = 545,4
 
+#include "../../../../program_connector/Functions.c"
+
 //+++++++++++++++++++++++++++++++++++++++++++++| MAIN |+++++++++++++++++++++++++++++++++++++++++++++++
 
 void hluti_2()
 {
-	StartTask(stop);
 	for (int i = 1;i <= 5; i++){
 			MoveForward_cm(50*i);
 			wait1Msec(2000);

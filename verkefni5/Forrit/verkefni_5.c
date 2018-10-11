@@ -42,11 +42,11 @@
 
 //+++++++++++++++++++++++++++++++++++++++++++++| MAIN |+++++++++++++++++++++++++++++++++++++++++++++++
 
-task main()
+void verkefni_5()
 {
 	StartTask(stop);
 
-  int threshold = 1500;      /* found by taking a reading on both DARK and LIGHT    */
+  int threshold = 400;      /* found by taking a reading on both DARK and LIGHT    */
                             /* surfaces, adding them together, then dividing by 2. */
   while(true)
   {
@@ -64,8 +64,8 @@ task main()
     if(SensorValue(lineFollowerRIGHT) > threshold)
     {
       // counter-steer right:
-      motor[leftMotor]  += 1;
-      motor[rightMotor] -= 1;
+      motor[leftMotor]  = 120;
+      motor[rightMotor] = -10;
     }
     // CENTER sensor sees dark:
     if(SensorValue(lineFollowerCENTER) > threshold)
@@ -78,8 +78,13 @@ task main()
     if(SensorValue(lineFollowerLEFT) > threshold)
     {
       // counter-steer left:
-      motor[leftMotor]  -= 1;
-      motor[rightMotor] += 1;
+      motor[leftMotor]  = -10;
+      motor[rightMotor] = 100;
+    }
+    if(SensorValue(lineFollowerLEFT) < threshold && SensorValue(lineFollowerRIGHT) < threshold && SensorValue(lineFollowerCENTER) < threshold)
+    {
+    		motor[leftMotor]  = 0;
+     	  motor[rightMotor] = 0;
     }
   }
 }
