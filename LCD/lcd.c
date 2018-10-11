@@ -27,6 +27,8 @@ string lcd_array[] = {"verkefni 2","Hluti 1","Hluti 2","Hluti 3","verkefni 3","v
 int index = 0;
 int index2 = 1;
 
+bool afram;
+
 void LCD(string text_1, string text_2)
 {
   clearLCDLine(0);
@@ -42,34 +44,49 @@ task main()
 {
 	while(true){
 		if(nLCDButtons == 4){
-			if(index > 4 && index < 8){
+			if(index >= 2 && index < 8){
 				index ++;
-				index2 = 10;
 			}else if(index < 8){
 				index = 0;
 				index2 ++;
 				if(index2 > 3){
-					index = 5;
-				  index2 = 3;
+					index = 4;
+					index2 = 9;
 				}
 			}
 
 		}
 
 		if(nLCDButtons == 1){
-			if(index < 4 && index < 0){
+			if(index > 4){
 				index --;
-				index2 = 10;
-			}else if(index < 0){
+				index2 = 9;
+			}else if(index >= 0 && index2 > 1){
+				if(index2 == 9){index2 = 4;};
 				index = 0;
 				index2 --;
 
 			}
 
 		}
-		//if(nLCDButtons == 1){
-		//
-		//}
+		if(nLCDButtons == 2){
+			afram = true;
+			while(afram)
+			{
+				clearLCDLine(0);
+				clearLCDLine(1);
+				displayLCDPos(0,6);
+				displayNextLCDString("Run");
+				displayLCDPos(1,2);
+				displayNextLCDString("Yes");
+				displayLCDPos(1,12);
+				displayNextLCDString("No");
+				wait1Msec(250);
+				if(nLCDButtons == 4){
+					afram = false;
+				}
+			}
+		}
 
 		LCD(lcd_array[index],lcd_array[index2]);
 		wait1Msec(250);
