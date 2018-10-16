@@ -40,7 +40,7 @@ bool task_start = false;
 
 //+++++++++++++++++++++++++++++++++++++++++++++| MAIN |+++++++++++++++++++++++++++++++++++++++++++++++
 
-task DriveStraight()
+task DriveStraight_verk4()
 {
 	while(true){
 	    if (abs(SensorValue[rightEncoder]) + 20 < abs(SensorValue[leftEncoder])){
@@ -77,10 +77,10 @@ int printRandoms(int lower, int upper)
 
 
 
-void MoveForward(bool att)
+void MoveForward_verk4(bool att)
 {
 	if (task_start == false){
-		StartTask(DriveStraight);
+		StartTask(DriveStraight_verk4);
 		task_start = true;
 	}
 }
@@ -93,9 +93,9 @@ void verkefni_4()
 	{
 		if(SensorValue[sonar] > 40)
 		{
-			MoveForward(true);
+			MoveForward_verk4(true);
 		}else{
-			StopTask(DriveStraight);
+			StopTask(DriveStraight_verk4);
 			task_start = false;
 			ResetMotor();
 			int random_number =  printRandoms(0, 1);
@@ -109,7 +109,7 @@ void verkefni_4()
 		}
 		while(SensorValue[lightSensor] > 200) // While the ambient lightSensor reads a value less than 200
 		{
-			StopTask(DriveStraight);
+			StopTask(DriveStraight_verk4);
 			task_start = false;
 			ResetMotor();
 		}

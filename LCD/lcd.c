@@ -43,7 +43,7 @@
 #include "../verkefni4/Forrit/verkefni_4.c"
 #include "../verkefni5/Forrit/verkefni_5.c"
 
-string lcd_array[] = {"verkefni 2","Hluti 1","Hluti 2","Hluti 3","verkefni 3","verkefni 4","verkefni 5","verkefni 6","verkefni 7","----------------------"};
+string lcd_array[] = {"verkefni 2","Hluti 1","Hluti 2","Hluti 3","verkefni 4","verkefni 5","verkefni 6","verkefni 7","----------------------"};
 
 int index = 0;
 int index2 = 1;
@@ -56,14 +56,14 @@ task lcd()
 {
 	while(true){
 		if(nLCDButtons == 4){
-			if(index >= 2 && index < 8){
+			if(index >= 2 && index < 7){
 				index ++;
-			}else if(index < 8){
+			}else if(index < 7){
 				index = 0;
 				index2 ++;
 				if(index2 > 3){
 					index = 4;
-					index2 = 9;
+					index2 = 8;
 				}
 			}
 
@@ -72,7 +72,7 @@ task lcd()
 		if(nLCDButtons == 1){
 			if(index > 4){
 				index --;
-				index2 = 9;
+				index2 = 8;
 			}else if(index >= 0 && index2 > 1){
 				if(index2 == 9){index2 = 4;};
 				index = 0;
@@ -99,13 +99,23 @@ task lcd()
 				}
 				if(nLCDButtons == 1){
 					switch(index){
-						case  5:
+						case 0:
+							switch(index2){
+								case 1:
+									hluti_1();
+									break;
+								case 2:
+									hluti_2();
+									break;
+								case 3:
+									hluti_3();
+									break;
+							}
+						case 5:
 							verkefni_4();
 							break;
 						case 6:
 							verkefni_5();
-							wait1Msec(2000);
-							TurnLeft90();
 							break;
 
 					}
@@ -121,6 +131,7 @@ task main()
 {
 	StartTask(stop);
 	StartTask(lcd);
+	StartTask(controls);
 	while(true){
 
 	}
