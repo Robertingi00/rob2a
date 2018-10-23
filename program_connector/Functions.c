@@ -1,8 +1,7 @@
 
+float const MagicNumber  = 2.644;
 int const FullPower = 65;
-float const Dd_left = 2.825;
-float const Dd_right = 2.675;
-int const TurnPower = 100;
+int const TurnPower = 85;
 
 void LCD(string text_1, string text_2)
 {
@@ -28,11 +27,11 @@ void ResetMotor()
   	motor[leftMotor] = 0;
 }
 
-void TurnRight90()
+void TurnRight(float deg)
 {
 		ResetEncoders();
-   	float test_degree = (Dd_right * 90);
-    while(abs(SensorValue[leftEncoder]) < test_degree)
+   	float degree = (MagicNumber * deg);
+    while(abs(SensorValue[leftEncoder]) <= degree)
     {
         motor[rightMotor] = -(TurnPower);
         motor[leftMotor] = TurnPower;
@@ -40,11 +39,11 @@ void TurnRight90()
     ResetMotor();
 }
 
-void TurnLeft90()
+void TurnLeft(float deg)
 {
     ResetEncoders();
-   	float test_degree = (Dd_left * 90);
-    while(abs(SensorValue[leftEncoder]) < test_degree)
+   	float degree = (MagicNumber * deg);
+    while(abs(SensorValue[rightEncoder]) <= degree)
     {
         motor[rightMotor] = TurnPower;
         motor[leftMotor] = -(TurnPower);

@@ -39,7 +39,7 @@
 \*-----------------------------------------------------------------------------------------------4246-*/
 #include "../program_connector/Functions.c"
 #include "../verkefni2/Forrit/verkefni_2.c"
-//#include "../verkefni3/Forrit/controls.c"
+#include "../verkefni3/Forrit/controls.c"
 #include "../verkefni4/Forrit/verkefni_4.c"
 #include "../verkefni5/Forrit/verkefni_5.c"
 
@@ -74,7 +74,7 @@ task lcd()
 				index --;
 				index2 = 8;
 			}else if(index >= 0 && index2 > 1){
-				if(index2 == 9){index2 = 4;};
+				if(index2 == 8){index2 = 4;};
 				index = 0;
 				index2 --;
 
@@ -98,6 +98,8 @@ task lcd()
 					afram = false;
 				}
 				if(nLCDButtons == 1){
+					stopTask(controls);
+					afram = false;
 					switch(index){
 						case 0:
 							switch(index2){
@@ -110,15 +112,21 @@ task lcd()
 								case 3:
 									hluti_3();
 									break;
-							}
-						case 5:
-							verkefni_4();
-							break;
-						case 6:
-							verkefni_5();
-							break;
 
+								break;
+							}
+						case 4:
+							if(index != 0){
+									verkefni_4();
+							}
+							break;
+						case 5:
+							if(index != 0){
+									verkefni_5();
+							}
+							break;
 					}
+					StartTask(controls);
 				}
 			}
 		}

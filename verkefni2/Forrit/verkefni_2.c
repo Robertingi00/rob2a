@@ -33,7 +33,12 @@ void hluti_1()
 		motor[rightMotor] = -127;
 		motor[leftMotor]  = -127;
 		wait1Msec((timi*i)*1000);
+
+		motor[rightMotor] = 0;
+		motor[leftMotor]  = 0;
+		wait1Msec(1000);
 	}
+	return;
 }
 
 void hluti_2()
@@ -64,8 +69,4 @@ void hluti_3(){
 	wait1Msec(1000);
 	MoveForward_cm(50);
 	wait1Msec(1000);
-
-	MoveForward_cm(50);
-	wait1Msec(1000);
-	TurnLeft90();
 }
