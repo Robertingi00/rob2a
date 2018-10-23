@@ -7,7 +7,7 @@ Hlut1 snérist um að nota tíma til að láta robitinn fara aframm um 50 cm og 
 
 #### Flowchart
 
-Inline-style: 
+
 ![alt text](https://github.com/Robertingi00/rob2a/blob/master/verkefni2/Forrit/Hlutar/hluti1/flowchart_verk2_hluti1.PNG "Logo Title Text 1")
 
 
@@ -59,7 +59,7 @@ void DriveStraight(bool att)
 
 #### Flowchart
 
-Inline-style: 
+
 ![alt text](https://github.com/Robertingi00/rob2a/blob/master/verkefni2/Forrit/Hlutar/hluti2/flowchart_verk2_hluti2.PNG "Logo Title Text 1")
 
 
@@ -75,7 +75,7 @@ Hlut1 3 þurftum við að búa til nýtt fall sem lætur hann beyja. Það er b�
 
 #### Flowchart
 
-Inline-style: 
+
 ![alt text](https://github.com/Robertingi00/rob2a/blob/master/verkefni2/Forrit/Hlutar/hluti3/flowchart_verk2_hluti3.PNG "Logo Title Text 1")
 
 
