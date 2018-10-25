@@ -7,8 +7,8 @@ Hlut1 snérist um að nota tíma til að láta robitinn fara aframm um 50 cm og 
 
 #### Flowchart
 
-<img src="\images\emoticons\cool.png">
-![alt text](./Forrit/Hlutar/hluti1/flowchart_verk2_hluti1.PNG "Logo Title Text 1")
+<img src="./Forrit/Hlutar/hluti1/flowchart_verk2_hluti1.PNG" style="width= 100%">
+
 
 
 #### Myndband
