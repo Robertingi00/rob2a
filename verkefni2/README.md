@@ -7,14 +7,11 @@ Hlut1 snérist um að nota tíma til að láta robitinn fara aframm um 50 cm og 
 
 #### Flowchart
 
-<img src="\images\emoticons\cool.png">
 ![alt text](./Forrit/Hlutar/hluti1/flowchart_verk2_hluti1.PNG "Logo Title Text 1")
-
-
 #### Myndband
 
 <a href="https://www.youtube.com/watch?v=lG1IULf8ywg&feature=youtu.be" target="_blank"><img src="http://img.youtube.com/vi/lG1IULf8ywg/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+alt="IMAGE ALT TEXT HERE" width="100%" border="10" /></a>
 
 ## Hluti 2
 
@@ -65,7 +62,7 @@ void DriveStraight(bool att)
 #### Myndband
 
 <a href="https://www.youtube.com/watch?v=J3qLPHMmgDE&feature=youtu.be" target="_blank"><img src="http://img.youtube.com/vi/J3qLPHMmgDE/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+alt="IMAGE ALT TEXT HERE" width="100%" border="10" /></a>
 
 ## Hluti 2
 
@@ -80,5 +77,5 @@ Hlut1 3 þurftum við að búa til nýtt fall sem lætur hann beyja. Það er b�
 #### Myndband
 
 <a href="https://www.youtube.com/watch?v=rGqQjMJ9WO8&feature=youtu.be" target="_blank"><img src="http://img.youtube.com/vi/rGqQjMJ9WO8/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+alt="IMAGE ALT TEXT HERE" width="100%" border="10" /></a>
 
