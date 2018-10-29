@@ -58,7 +58,7 @@ void DriveStraight(bool att)
 
 #### Flowchart
 
-<img src="\images\emoticons\cool.png">
+
 ![alt text](https://github.com/Robertingi00/rob2a/blob/master/verkefni2/Forrit/Hlutar/hluti2/flowchart_verk2_hluti2.PNG "Logo Title Text 1")
 
 
