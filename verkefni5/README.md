@@ -1,6 +1,6 @@
 # Verkefni 5
 
-Vekrfni 5 áttum við að elta lína sem gekk vel hjá okkur.
+Vekrfni 5 áttum við að elta lína sem gekk vel hjá okkur. Notuðum sample kóða sem hjálpargagn
 
 #### Flowchart
 
