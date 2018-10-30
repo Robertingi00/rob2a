@@ -1,8 +1,7 @@
 # Verkefni 3
 
-## Verkefni 3
+Verkefni 3 var frekar létt. Við breyttum einu í því, hluti b. Þar áttum við að tengja tvö verkefni við tvo takka. Í staðinn notuðum skjáinn sem menu fyrir öll verkefni. Getur séð myndbandinu hér fyrir neðan.
 
-Verkefni 3 var frekar létt. Við bryttum einu í því, hluti b. Þar áttum við að tenga tvö verkefni við tvo takka. Í staðinn notuðum skjáinn sem menu fyrir öllverkfni.
 #### Flowchart
 
 
