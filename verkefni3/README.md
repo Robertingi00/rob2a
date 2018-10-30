@@ -6,7 +6,7 @@ Verkefni 3 var frekar létt. Við bryttum einu í því, hluti b. Þar áttum vi
 #### Flowchart
 
 
-![alt text](./Forrit/flowchart.PNG "Logo Title Text 1")
+![alt text](./Forrit/flowchart.png "Logo Title Text 1")
 
 
 #### Myndband
