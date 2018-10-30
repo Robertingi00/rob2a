@@ -8,7 +8,7 @@ Svo notuðum við drive_straight fallið með smá breytingu, við breyttum þv�
 #### Flowchart
 
 
-![alt text](./Forrit/flowchart.PNG "Logo Title Text 1")
+![alt text](./Forrit/flowchart.png "Logo Title Text 1")
 
 
 #### Myndband
