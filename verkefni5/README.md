@@ -5,7 +5,7 @@ Vekrfni 5 áttum við að elta lína sem gekk vel hjá okkur.
 #### Flowchart
 
 <img src="\images\emoticons\cool.png">
-![alt text](./Forrit/flowchart.PNG "Logo Title Text 1")
+![alt text](./Forrit/flowchart.png "Logo Title Text 1")
 
 
 #### Myndband
