@@ -2,8 +2,8 @@
 
 ## Hluti 1
 
-Hlut1 snérist um að nota tíma til að láta robitinn fara aframm um 50 cm og afturm um 50 cm 5 sinnum, og hækka vegalengina með 50 í hvert skipti.
-Þessi liður var frekar léttur að leysa en var góður inngangur fyrir áfanngan.
+Hlut1 snerist um að nota tíma til að láta robitinn fara áfram um 50 cm og aftur um 50 cm 5 sinnum, og hækka vegalengdina með 50 cm í hvert skipti.
+Þessi liður var frekar léttur að leysa en var góður inngangur fyrir áfangann.
 
 #### Flowchart
 
@@ -15,7 +15,7 @@ alt="IMAGE ALT TEXT HERE" width="100%" border="10" /></a>
 
 ## Hluti 2
 
-Hluti2 var svipaður og fyrsti hlutinn, en í honum átti maður að nota vegalengd. Þetta leit út fyrir að vera létta og allt var að virka nema að hann var að keyra skakkt. Okkur leist ekki á það og reyndum að finna leið til að laga það, við ákvöðum að hafa void sem lætur robotinn keyra beint.
+Hluti2 var svipaður og fyrsti hlutinn, en í honum átti maður að nota vegalengd. Þetta leit út fyrir að vera létta og allt var að virka nema að hann var að keyra skakkt. Okkur leist ekki á það og reyndum að finna leið til að laga það, við ákvöðum að hafa void sem lætur robotinn keyra beint, það er hér fyrir neðanann.
 ```c
 void DriveStraight(bool att)
 {
@@ -56,7 +56,7 @@ void DriveStraight(bool att)
 #### Flowchart
 
 
-![alt text](https://github.com/Robertingi00/rob2a/blob/master/verkefni2/Forrit/Hlutar/hluti2/flowchart_verk2_hluti2.PNG "Logo Title Text 1")
+![alt text](./Forrit/Hlutar/hluti2/flowchart_verk2_hluti2.PNG "Logo Title Text 1")
 
 
 #### Myndband
@@ -64,13 +64,13 @@ void DriveStraight(bool att)
 <a href="https://www.youtube.com/watch?v=J3qLPHMmgDE&feature=youtu.be" target="_blank"><img src="http://img.youtube.com/vi/J3qLPHMmgDE/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="100%" border="10" /></a>
 
-## Hluti 2
+## Hluti 3
 
-Hlut1 3 þurftum við að búa til nýtt fall sem lætur hann beyja. Það er búið að vera það erfiðasta í áfnganum. Þetta void mund tengast næstum öllum verkefnunum á eftir þessum og var það ekki alltaf að virka. Við töldum okkur sigraða og settum Gyroscope á hann og það virkaði bara vel.
+Hlut1 3 þurftum við að búa til nýtt fall sem lætur hann beygja. Það er búið að vera það erfiðasta í áfanganum. Þetta void mund tengjast næstum öllum verkefnunum á eftir þessum. Fallið var ekki alltaf að virka vel, robotinn beygði einhvers staðar á milli 80 -120 gráður aldrei það sama. Við töldum okkur sigraða og settum Gyroscope á hann og það virkaði betur.
 
 #### Flowchart
 
-<img src="https://github.com/Robertingi00/rob2a/blob/master/verkefni2/Forrit/Hlutar/hluti3/flowchart_verk2_hluti3.PNG">
+![alt text](./Forrit/Hlutar/hluti3/flowchart_verk2_hluti3.PNG "Logo Title Text 1")
 
 
 
