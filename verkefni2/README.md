@@ -56,7 +56,7 @@ void DriveStraight(bool att)
 #### Flowchart
 
 
-![alt text](./Forrit/Hlutar/hluti1/flowchart_verk2_hluti2.PNG "Logo Title Text 1")
+![alt text](./Forrit/Hlutar/hluti2/flowchart_verk2_hluti2.PNG "Logo Title Text 1")
 
 
 #### Myndband
@@ -70,7 +70,7 @@ Hlut1 3 þurftum við að búa til nýtt fall sem lætur hann beygja. Það er b
 
 #### Flowchart
 
-![alt text](./Forrit/Hlutar/hluti1/flowchart_verk2_hluti3.PNG "Logo Title Text 1")
+![alt text](./Forrit/Hlutar/hluti3/flowchart_verk2_hluti3.PNG "Logo Title Text 1")
 
 
 

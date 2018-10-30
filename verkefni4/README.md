@@ -1,7 +1,5 @@
 # Verkfni 4
 
-## Verkefni 4
-
 Verkefni 4 var ekki það erfitt. En eina sem stoppaði okkur var að beyja 90°. Robotinn beygði alltaf milli 80 - 120°. Náðum ekki að laga það, en þegar við notum Gyroscope vikraði það mun betur.
 Svo notuðum við drive_straight fallið með smá breytingu, við breyttum því í task og létum að virka þannig að það keyrir þangað til að við seigjum annað.
 

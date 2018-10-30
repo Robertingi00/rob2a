@@ -1,7 +1,5 @@
 # Verkefni 5
 
-## Vekrefni 5
-
 Vekrfni 5 áttum við að elta lína sem gekk vel hjá okkur.
 
 #### Flowchart
