@@ -53,17 +53,17 @@ void hluti_3(){
 	StartTask(stop);
 	MoveForward_cm(50);
 	wait1Msec(1000);
-	TurnLeft90();
+	TurnLeft(90.0);
 
 	wait1Msec(1000);
 	MoveForward_cm(50);
 	wait1Msec(1000);
-	TurnRight90();
+	TurnRight(90.0);
 
 	wait1Msec(1000);
 	MoveForward_cm(50);
 	wait1Msec(1000);
-	TurnRight90();
+	TurnRight(90.0);
 
 	wait1Msec(1000);
 	MoveForward_cm(50);
@@ -71,7 +71,7 @@ void hluti_3(){
 
 	MoveForward_cm(50);
 	wait1Msec(1000);
-	TurnLeft90();
+	TurnLeft(90.0);
 }
 
 task main()

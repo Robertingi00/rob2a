@@ -17,26 +17,15 @@
 #pragma config(Sensor, in1,    lineFollowerCENTER,  sensorLineFollower)
 #pragma config(Sensor, in8,    lineFollowerLEFT,    sensorLineFollower)
 
-#include "../../../../program_connector/Functions.c"
 
+#include "../../../../program_connector/Functions.c"
 
 task main()
 {
+	TurnLeft(90);
 	TurnRight(90);
-	/* --Turn Left--
-	ResetEncoders();
-	while(abs(SensorValue[rightEncoder]) < 237.98){
-		motor[rightMotor] = -85;
-		motor[leftMotor] = 85;
-	}
-	*/
-
-
-	/* --Turn Left--
-	ResetEncoders();
-	while(abs(SensorValue[leftEncoder]) < 237.98){
-		motor[rightMotor] = 87;
-		motor[leftMotor] = -85;
-	}
-	*/
+	TurnLeft(180);
+	TurnRight(90);
+	TurnLeft(90);
+	TurnRight(180);
 }

@@ -51,6 +51,7 @@ int index2 = 1;
 bool afram;
 
 
+
 //+++++++++++++++++++++++++++++++++++++++++++++| MAIN |+++++++++++++++++++++++++++++++++++++++++++++++
 task lcd()
 {
@@ -98,7 +99,7 @@ task lcd()
 					afram = false;
 				}
 				if(nLCDButtons == 1){
-					stopTask(controls);
+					StopTask(controls);
 					afram = false;
 					switch(index){
 						case 0:
@@ -135,6 +136,10 @@ task lcd()
 		wait1Msec(250);
 	}
 }
+
+
+
+
 task main()
 {
 	StartTask(stop);

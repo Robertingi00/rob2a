@@ -71,6 +71,7 @@ void verkefni_5()
      	  afram = false;
     }
   }
-  while(afram)
+  while(afram);
+
   return;
 }

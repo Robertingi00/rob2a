@@ -22,6 +22,7 @@ def move_to_ball(ball):
     if robot.x != 1:
         if robot.x == 2:
             robot.x -= 1
+            
         else:
             robot.x += 1
     print(robot.hnit())
@@ -61,6 +62,9 @@ boltar = [bolti1, bolti2, bolti3, bolti4]
 for x in range(4):
     move_to_ball(boltar[x])
     move_to_ball(karfa)
+
+
+move_to_ball(boltar[1])
 
 
 

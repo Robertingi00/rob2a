@@ -1,7 +1,9 @@
 
-float const MagicNumber  = 2.644;
+
+float const magicNumber = 2.4;
 int const FullPower = 65;
-int const TurnPower = 85;
+int const TurnPower = 90;
+
 
 void LCD(string text_1, string text_2)
 {
@@ -26,29 +28,43 @@ void ResetMotor()
     motor[rightMotor] = 0;
   	motor[leftMotor] = 0;
 }
-
-void TurnRight(float deg)
+void TurnLeft(int deg)
 {
-		ResetEncoders();
-   	float degree = (MagicNumber * deg);
-    while(abs(SensorValue[leftEncoder]) <= degree)
-    {
-        motor[rightMotor] = -(TurnPower);
-        motor[leftMotor] = TurnPower;
-    }
-    ResetMotor();
+
+		SensorType[in3] = sensorNone;
+		wait1Msec(1000);
+		SensorType[in3] = sensorGyro;
+		wait1Msec(2000);
+
+	  int rotate_degrees = deg * 10;
+
+	  while(abs(SensorValue[in3]) < rotate_degrees)
+	  {
+	    motor[rightMotor] = TurnPower;
+	    motor[leftMotor] = -(TurnPower);
+	  }
+	  motor[rightMotor] = -15;
+	  motor[leftMotor] = 15;
+	  wait1Msec(250);
 }
 
-void TurnLeft(float deg)
+void TurnRight(int deg)
 {
-    ResetEncoders();
-   	float degree = (MagicNumber * deg);
-    while(abs(SensorValue[rightEncoder]) <= degree)
-    {
-        motor[rightMotor] = TurnPower;
-        motor[leftMotor] = -(TurnPower);
-    }
-    ResetMotor();
+    SensorType[in3] = sensorNone;
+		wait1Msec(1000);
+		SensorType[in3] = sensorGyro;
+		wait1Msec(2000);
+
+	  int rotate_degrees = deg * 10;
+
+	  while(abs(SensorValue[in3]) < rotate_degrees)
+	  {
+	    motor[rightMotor] = -(TurnPower);
+	    motor[leftMotor] = TurnPower;
+	  }
+	  motor[rightMotor] = 15;
+	  motor[leftMotor] = -15;
+	  wait1Msec(250);
 }
 
 float test(float cm){
@@ -94,20 +110,26 @@ void DriveStraight(bool att)
 void MoveForward_cm(float cm)
 {
 	ResetEncoders();
-	float degree = test(cm);
-	while(abs(SensorValue[rightEncoder]) < degree){
+	float wheel_degree = test(cm);
+	while(abs(SensorValue[rightEncoder]) < wheel_degree){
 		DriveStraight(true);
 	}
+	motor[rightMotor] = -5;
+  motor[leftMotor] = -5;
+  wait1Msec(250);
 	ResetMotor();
 }
 
 void MoveBackward_cm(float cm)
 {
 	ResetEncoders();
-	float degree = test(cm);
-	while(abs(SensorValue[rightEncoder]) < degree){
+	float wheel_degree = test(cm);
+	while(abs(SensorValue[rightEncoder]) < wheel_degree){
 			DriveStraight(false);
 	}
+	motor[rightMotor] = 5;
+  motor[leftMotor] = 5;
+  wait1Msec(250);
 	ResetMotor();
 }
 

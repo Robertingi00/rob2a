@@ -52,21 +52,19 @@ void hluti_2()
 }
 
 void hluti_3(){
-	MoveForward_cm(50);
-	wait1Msec(1000);
-	TurnLeft90();
 
 	wait1Msec(1000);
 	MoveForward_cm(50);
-	wait1Msec(1000);
-	TurnRight90();
+	TurnLeft(90);
 
 	wait1Msec(1000);
 	MoveForward_cm(50);
-	wait1Msec(1000);
-	TurnRight90();
+	TurnRight(90);
 
 	wait1Msec(1000);
 	MoveForward_cm(50);
+	TurnRight(90);
+
 	wait1Msec(1000);
+	MoveForward_cm(50);
 }
