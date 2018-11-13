@@ -8,8 +8,8 @@
 |*                                            - Bip  -                                                *|
 |*                                      ROBOTC on VEX 2.0 CORTEX                                      *|
 |*                                                                                                    *|
-|*  This program instructs your robot to move forward at full power for three seconds.  There is a    *|
-|*  two second pause at the beginning of the program.                                                 *|
+|*  Í hluta 2 á vélmennið að gera það nákvæmlega sama og í hluta 1 en núna er vélmennið að keyra      *|
+|*  eftir vegalengd en ekki tíma.                                                                     *|
 \*-----------------------------------------------------------------------------------------------4246-*/
 
 #include "../../../../program_connector/Functions.c"
