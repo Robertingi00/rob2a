@@ -11,6 +11,7 @@
 |*                                                                                                    *|
 |*   Í hluta 1 erum við að keyra áfram 50cm og 50cm til baka og eftir hverja umferð eykst             *|
 |*   vegalengdin alltaf um 50cm. Þannig næsta umferð verður 1m áfram og 1m til baka.                  *|
+|*   Við erum að gera þetta eftir tíma.                                                               *|
 \*-----------------------------------------------------------------------------------------------4246-*/
 
 // 72cm a 2sec
