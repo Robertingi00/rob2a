@@ -1,17 +1,14 @@
-const array hnit_upphaf = [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
+robot = [1,0]
+obj = [2,2]
 
-array get_hnit(int x, int y){
-	temp_hnit = hnit_upphaf;
-	temp_hnit[y][x] = 1;
 
-	return temp_hnit
-}
 
-array bolti1 = get_hnit(2, 0);
-array bolti2 = get_hnit(0, 1);
-array bolti3 = get_hnit(2, 2);
-array bolti4 = get_hnit(2, 4);
+def go_to_obj(robot,obj):
+    ferd = [-robot[0]+obj[0],-robot[1]+obj[1]]
+    if ferd[0] == 2:
+        robot[0] += 1
+        fer[0] -=1
+        print('robot fer í myðju')
 
-array robot = get_hnit(1, 0);
 
-array karfa = get_hnit(0, 3);
+go_to_obj(robot,obj);

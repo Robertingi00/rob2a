@@ -40,8 +40,6 @@ task DriveStraight_verk4()
 	    }else{
 	        motor[rightMotor] = FullPower;
 	        motor[leftMotor] = FullPower;
-
-
 	    }
 	    writeDebugStream("----------------------------------------------------\n");
 	    writeDebugStream("rightMotor = %d Encoder = %d\n",motor[rightMotor],abs(SensorValue[rightEncoder]));
@@ -90,8 +88,6 @@ void verkefni_4()
 			}else{
 				TurnLeft(90);
 			}
-
-
 		}
 		while(SensorValue[lightSensor] > 200) // While the ambient lightSensor reads a value less than 200
 		{

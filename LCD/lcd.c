@@ -1,5 +1,4 @@
-#pragma config(UART_Usage, UART1, uartVEXLCD, baudRate19200, IOPins, None, None)
-#pragma config(UART_Usage, UART2, uartNotUsed, baudRate4800, IOPins, None, None)
+
 #pragma config(I2C_Usage, I2C1, i2cSensors)
 #pragma config(Sensor, in2,    lightSensor,    sensorReflection)
 #pragma config(Sensor, in5,    ArmeEncoder,    sensorPotentiometer)

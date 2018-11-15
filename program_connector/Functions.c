@@ -1,6 +1,5 @@
 
 
-float const magicNumber = 2.4;
 int const FullPower = 65;
 int const TurnPower = 90;
 
