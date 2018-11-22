@@ -42,8 +42,8 @@ task controls()
   while(1 == 1)
   {
     //Driving Motor Control
-    motor[leftMotor] = vexRT[Ch3];
-    motor[rightMotor] = vexRT[Ch2];
+    //motor[leftMotor] = vexRT[Ch3];
+    //motor[rightMotor] = vexRT[Ch2];
 
     //Arm Control
     if(vexRT[Btn6U] == 1)
