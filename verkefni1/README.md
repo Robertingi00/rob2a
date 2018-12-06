@@ -23,10 +23,10 @@ Svo koma að því að tengja hann, okkar markmið var að hafa eins fáar snúr
    | Shaft Encoder A Top Wire    |        | Port 3  |       |        |
    | Shaft Encoder A Bottom Wire |        | Port 4  |       |        |
    | Led Screen                  |        |         |       | Port 1 |
-   | Light Sensor                | Port 2 |         |       |        |
+   | Light Sensor                | Port 4 |         |       |        |
    | Potentiometers              | Port 5 |         |       |        |
    | Line Follower Right         | Port 7 |         |       |        |
-   | Line Follower Middle        | Port 1 |         |       |        |
+   | Line Follower Middle        | Port 2 |         |       |        |
    | Line Follower Left          | Port 8 |         |       |        |
    | Button                      |        | Port 12 |       |        |
    | Rangesensor Input           |        | Port 8  |       |        |
